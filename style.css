@@ -1,0 +1,171 @@
+.navbar {
+  background: transparent !important;
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+}
+   
+.logo-slider {
+  overflow: hidden;
+  background-color: #f8f9fa;
+  padding: 20px 0;
+}
+
+.logo-track {
+  display: flex;
+  width: calc(250px * 20); /* Ajustar según cantidad de logos */
+  animation: scroll 35s linear infinite;
+}
+
+.logo-track img {
+  height: 60px;
+  margin: 0 40px;
+  object-fit: contain;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.container > section {
+  margin: 0 auto;
+  padding: 10em 3em;
+  text-align: center;
+}
+
+/* From Uiverse.io by roajuan93 */ 
+.card2 {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px 25px;
+  gap: 20px;
+}
+
+/* for all social containers*/
+.socialContainer {
+  width: 52px;
+  height: 52px;
+  border-radius: 5px;
+  background-color: rgb(44, 44, 44);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition-duration: 0.3s;
+}
+/* instagram*/
+.containerOne:hover {
+  background-color: #d62976;
+  transition-duration: 0.3s;
+}
+/* Tiktok*/
+.containerTwo:hover {
+  background-color: #25f4ee;
+  transition-duration: 0.3s;
+}
+/* Facebook*/
+.containerThree:hover {
+  background-color: #1877f2;
+  transition-duration: 0.3s;
+}
+/* Whatsapp*/
+.containerFour:hover {
+  background-color: green;
+  transition-duration: 0.3s;
+}
+
+.socialContainer:active {
+  transform: scale(0.9);
+  transition-duration: 0.3s;
+}
+
+.socialSvg {
+  width: 19px;
+}
+.largeIcon {
+  width: 27px; /* Ancho específico solo para el icono de TikTok */
+}
+.socialSvg path {
+  fill: rgb(255, 255, 255);
+}
+
+.socialContainer:hover .socialSvg {
+  animation: slide-in-top 0.3s both;
+}
+
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.video-section {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.video-fullscreen {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+}
+
+.video-logo {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.logo-img {
+  max-width: 700px;
+  width: 80%;
+  opacity: 0.95;
+}
+
+.footer {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #0f1214; /* oscuro elegante */
+}
+
+.footer a:hover {
+  color: #c0a060 !important; /* toque dorado sutil */
+}
+
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  background-color: #25d366;
+  color: white;
+  font-size: 2rem;
+  padding: 12px 14px;
+  border-radius: 50%;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-button:hover {
+  transform: scale(1.1);
+  color: white;
+  text-decoration: none;
+}
