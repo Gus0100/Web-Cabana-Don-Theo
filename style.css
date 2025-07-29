@@ -187,4 +187,28 @@
 }
 
 
-/*mapa*/
+/*card mejorado*/
+.card_ui {
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 10px 15px -3px rgba(33,150,243,.4),0 4px 6px -4px rgba(33,150,243,.4);
+  border-radius: 10px;
+  background-color: #6B6ECC;
+  background: linear-gradient(145deg, #6CACE4 50%, #ffffff 100%);
+}
+
+.title_ui {
+  font-weight: 800;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.64);
+  margin-top: 10px;
+  font-size: 25px;
+  letter-spacing: 1px;
+}
+
+body {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 16px;
+  font-weight: 400;
+}
