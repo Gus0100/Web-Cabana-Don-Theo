@@ -15,6 +15,9 @@
 
   <!-- Tu CSS personalizado (opcional) -->
   <link rel="stylesheet" href="style.css" />
+
+  <!--librería AOS.js-->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -79,7 +82,7 @@
     </div>
   </div>
   <!-- Tarjeta grande-->
-  <div class="card text-center container my-5">
+  <div class="card text-center container my-5" data-aos="zoom-in">
     <div class="card-header">
       Queres enterarte de las ultimas ofertas?
     </div>
@@ -92,8 +95,8 @@
       2 days ago
     </div>
   </div>
-  <!-- Tarjeta chica---------------------------------------------------------------------------------------------------------------->
-  <div class="container mt-6 mb-5 card_ui">
+  <!-- 1ra Tarjeta chica---------------------------------------------------------------------------------------------------------------->
+  <div class="container mt-6 mb-5 card_ui" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
     <div class="row g-0">
       <!-- Imagen a la izquierda -->
       <div class="col-md-6 order-md-1 order-1 p-3">
@@ -195,8 +198,8 @@
       </div>
     </div>
   </div>
-  <!-- Tarjeta chica---------------------------------------------------------------------------------------------------------------->
-  <div class="container mt-4 mb-5 card_ui">
+  <!-- 2da Tarjeta chica---------------------------------------------------------------------------------------------------------------->
+  <div class="container mt-4 mb-5 card_ui" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
     <div class="row g-0">  
       <!-- Columna de texto a la derecha -->
       <div class="col-md-6 order-md-1 order-2">
@@ -362,6 +365,10 @@
 
       lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
     });
+  </script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
   </script>
 </body>
 </html>
