@@ -1,9 +1,11 @@
-.navbar {
-  background: transparent !important;
-  position: absolute;
-  width: 100%;
-  z-index: 10;
-  font-family: 'Libre Baskerville', serif;
+#navbar {
+  transition: background-color 0.3s ease;
+  background-color: transparent;
+}
+
+#navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.95); /* o el color que quieras */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* opcional */
 }
    
 .logo-slider {
