@@ -1,13 +1,38 @@
+/* Tamaño general del navbar */
 #navbar {
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, padding 0.3s ease;
   background-color: transparent;
+  padding: 0.5rem 0;
 }
 
+/* Al hacer scroll cambia el fondo */
 #navbar.scrolled {
-  background-color: rgba(255, 255, 255, 0.95); /* o el color que quieras */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* opcional */
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-   
+
+/* Tamaño del logo */
+#navbar .navbar-brand img {
+  height: 40px;
+  width: auto;
+}
+
+/* Ajustes para pantallas chicas */
+@media (max-width: 768px) {
+  #navbar {
+    padding: 0.3rem 0;
+  }
+
+  #navbar .navbar-brand img {
+    height: 32px;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 0.9rem;
+    padding: 0.3rem 0.5rem;
+  }
+}
+
 .logo-slider {
   overflow: hidden;
   background-color: #f8f9fa;
@@ -131,7 +156,7 @@
 
 .video-logo {
   position: absolute;
-  top: 35%;
+  top: 25%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
