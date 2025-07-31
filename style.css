@@ -73,7 +73,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 25px 25px;
+  padding: 0px 10px 25px 10px;
   gap: 20px;
 }
 
@@ -223,6 +223,7 @@
   border-radius: 10px;
   background-color: #6B6ECC;
   background: linear-gradient(145deg, #6CACE4 50%, #ffffff 100%);
+  margin-top: 2rem;
 }
 
 .title_ui {
@@ -239,3 +240,4 @@ body {
   font-size: 16px;
   font-weight: 400;
 }
+
