@@ -34,21 +34,26 @@
 }
 
 .logo-slider {
+  width: 100%;
   overflow: hidden;
-  background-color: #f8f9fa;
-  padding: 20px 0;
+  background-color: white; /* o el color que uses */
+  display: flex;
+  justify-content: center;
+  padding: 10px 0; /* espacio superior e inferior */
 }
 
 .logo-track {
   display: flex;
-  width: calc(250px * 20); /* Ajustar según cantidad de logos */
-  animation: scroll 35s linear infinite;
+  justify-content: center; /* centra horizontalmente los logos */
+  align-items: center;
+  gap: 50px; /* separa los logos entre sí */
+  animation: scroll 20s linear infinite;
 }
 
 .logo-track img {
-  height: 60px;
-  margin: 0 40px;
+  height: 60px; /* unifica altura */
   object-fit: contain;
+  filter: brightness(1); /* ajusta si hay alguna que se vea opaca */
 }
 
 @keyframes scroll {
@@ -156,7 +161,7 @@
 
 .video-logo {
   position: absolute;
-  top: 25%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
@@ -164,9 +169,18 @@
 
 .logo-img {
   max-width: 700px;
-  width: 80%;
-  opacity: 0.95;
+  width: 85%; /* 100% del contenedor padre */
+  height: auto;
 }
+
+/* Celulares - permití que crezca más y ocupando más ancho */
+@media (max-width: 575px) {
+  .logo-img {
+    max-width: 90vw; /* Ocupa el 90% del ancho de la pantalla */
+    width: 90vw;
+  }
+}
+
 
 .footer {
   font-family: 'Open Sans', sans-serif;
