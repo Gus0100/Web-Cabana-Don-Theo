@@ -261,3 +261,27 @@ body {
   margin: auto;          /* Centra horizontalmente */
   display: block;
 }
+
+/* Estilos para el carrusel */
+.carousel {
+  height: 100%;
+  overflow: hidden; /* Esto evita que se vea el contenido que se sale */
+}
+
+.carousel-inner, .carousel-item {
+  height: 100%;
+}
+
+/* Asegura que las imágenes del carrusel mantengan su relación de aspecto */
+.carousel-item img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/* En móviles, el carrusel tendrá una altura fija */
+@media (max-width: 767.98px) {
+  .carousel {
+    height: 300px; /* Ajusta esta altura según necesites */
+  }
+}
