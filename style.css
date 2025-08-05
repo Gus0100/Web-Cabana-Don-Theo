@@ -36,7 +36,7 @@
 .logo-slider {
   width: 100%;
   overflow: hidden;
-  background-color: white; /* o el color que uses */
+  background-color: rgba(255, 255, 255, 0); /* o el color que uses */
   display: flex;
   justify-content: center;
   padding: 10px 0; /* espacio superior e inferior */
@@ -150,6 +150,7 @@
   height: 100vh;
   position: relative;
   overflow: hidden;
+  background-color: white;
 }
 
 .video-fullscreen {
@@ -233,10 +234,10 @@
   text-align: center;
   position: relative;
   cursor: pointer;
-  box-shadow: 0 10px 15px -3px rgba(33,150,243,.4),0 4px 6px -4px rgba(33,150,243,.4);
+  box-shadow: 0 10px 15px -3px rgb(27, 103, 161),0 4px 6px -4px rgba(33,150,243,.4);
   border-radius: 10px;
-  background-color: #6B6ECC;
-  background: linear-gradient(145deg, #6CACE4 50%, #ffffff 100%);
+  background: #565656;
+  background: linear-gradient(90deg, rgba(86, 86, 86, 1) 0%,rgba(198, 198, 198, 1) 100%);
   margin-top: 2rem;
 }
 
@@ -253,6 +254,8 @@ body {
   font-family: 'Libre Baskerville', serif;
   font-size: 16px;
   font-weight: 400;
+  background: #040404;
+  background: linear-gradient(90deg, rgba(4, 4, 4, 1) 0%,rgba(86, 86, 86, 255) 50%,rgba(132, 132, 132, 1) 100%)
 }
 
 .carousel-logo {
@@ -283,5 +286,52 @@ body {
 @media (max-width: 767.98px) {
   .carousel {
     height: 300px; /* Ajusta esta altura según necesites */
+  }
+}
+
+.tarjeta-mayo {
+  height: 50%; /* o cualquier altura que necesites */
+  object-fit: cover;
+  object-position: center;
+  width: 100%; /* ocupa todo el ancho del div */
+  max-width: 700px; /* opcional: para que no sea demasiado ancha */
+}
+
+/* Estilos para la sección Hero */
+.hero-section {
+  height: 500px;
+  overflow: hidden;
+}
+
+/* Logo superpuesto */
+.logo-overlay {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.8);
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.logo-img-card {
+  max-height: 100px;
+  width: auto;
+}
+
+/* Ajustes para móviles */
+@media (max-width: 768px) {
+  .logo-overlay {
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    padding: 1rem;
+  }
+  
+  .hero-section, .carousel-item img {
+    height: 400px !important;
   }
 }
