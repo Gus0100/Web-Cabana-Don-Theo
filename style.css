@@ -104,6 +104,23 @@ body {
   text-align: center;
 }
 
+/* Efecto hover para imágenes ******************************/
+.img-fluid {
+  transition: transform 0.3s;
+}
+.img-fluid:hover {
+  transform: scale(1.03);
+}
+
+/* Borde decorativo para secciones */
+.row {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 2rem;
+}
+.row:last-child {
+  border-bottom: none;
+}
+
 /* card-ui *************************************************/ 
 .card-redes {
   width: fit-content;
@@ -215,6 +232,7 @@ body {
   }
 }
 
+
 .map-container {
   width: 100%;
   max-width: 400px; /* Ajustá este valor según el ancho deseado */
@@ -248,6 +266,14 @@ body {
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.64);
   margin-top: 10px;
+  font-size: 25px;
+  letter-spacing: 1px;
+}
+
+.title_ui_invert {
+  font-weight: 800;
+  text-transform: uppercase;
+  color: white;
   font-size: 25px;
   letter-spacing: 1px;
 }
