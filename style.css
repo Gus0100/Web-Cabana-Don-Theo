@@ -1,3 +1,11 @@
+body {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 16px;
+  font-weight: 400;
+  background: #040404;
+  background: linear-gradient(90deg, rgba(4, 4, 4, 1) 0%,rgba(86, 86, 86, 255) 50%,rgba(132, 132, 132, 1) 100%)
+}
+
 /* Tamaño general del navbar */
 #navbar {
   transition: background-color 0.3s ease, padding 0.3s ease;
@@ -7,7 +15,7 @@
 
 /* Al hacer scroll cambia el fondo */
 #navbar.scrolled {
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(255, 255, 255, 0.972);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -33,27 +41,52 @@
   }
 }
 
+/* Carrusel de logos infinito ***************************************************/
 .logo-slider {
   width: 100%;
   overflow: hidden;
-  background-color: rgba(255, 255, 255, 0); /* o el color que uses */
-  display: flex;
-  justify-content: center;
-  padding: 10px 0; /* espacio superior e inferior */
+  background: transparent;
+  padding: 20px 0;
+  position: relative;
 }
 
 .logo-track {
   display: flex;
-  justify-content: center; /* centra horizontalmente los logos */
-  align-items: center;
-  gap: 50px; /* separa los logos entre sí */
+  gap: 50px;
   animation: scroll 20s linear infinite;
+  width: max-content; /* Asegura que el contenedor no tenga límite de ancho */
 }
 
 .logo-track img {
-  height: 60px; /* unifica altura */
+  height: 60px;
   object-fit: contain;
-  filter: brightness(1); /* ajusta si hay alguna que se vea opaca */
+  filter: brightness(1);
+  transition: transform 0.3s;
+}
+
+.logo-track img:hover {
+  transform: scale(1.1); /* Efecto hover opcional */
+}
+
+/* Animación */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Mueve solo el 50% para evitar saltos */
+  }
+}
+
+/* Ajustes para móvil */
+@media (max-width: 768px) {
+  .logo-track {
+    gap: 30px;
+    animation-duration: 15s; /* Más rápido en móvil */
+  }
+  .logo-track img {
+    height: 40px;
+  }
 }
 
 @keyframes scroll {
@@ -71,8 +104,8 @@
   text-align: center;
 }
 
-/* From Uiverse.io by roajuan93 */ 
-.card2 {
+/* card-ui *************************************************/ 
+.card-redes {
   width: fit-content;
   height: fit-content;
   display: flex;
@@ -168,7 +201,7 @@
   z-index: 2;
 }
 
-.logo-img {
+.logo-video {
   max-width: 700px;
   width: 85%; /* 100% del contenedor padre */
   height: auto;
@@ -176,46 +209,15 @@
 
 /* Celulares - permití que crezca más y ocupando más ancho */
 @media (max-width: 575px) {
-  .logo-img {
+  .logo-video {
     max-width: 90vw; /* Ocupa el 90% del ancho de la pantalla */
     width: 90vw;
   }
 }
 
-
-.footer {
-  font-family: 'Open Sans', sans-serif;
-  background-color: #0f1214; /* oscuro elegante */
-}
-
-.footer a:hover {
-  color: #c0a060 !important; /* toque dorado sutil */
-}
-
-.whatsapp-button {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 999;
-  background-color: #25d366;
-  color: white;
-  font-size: 2rem;
-  padding: 12px 14px;
-  border-radius: 50%;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease;
-}
-
-.whatsapp-button:hover {
-  transform: scale(1.1);
-  color: white;
-  text-decoration: none;
-}
-
 .map-container {
   width: 100%;
-  max-width: 600px; /* Ajustá este valor según el ancho deseado */
+  max-width: 400px; /* Ajustá este valor según el ancho deseado */
   margin: 0 auto;   /* Centra el mapa si el ancho es menor que el contenedor */
   overflow: hidden; /* Oculta el contenido que se desborde */
   border-radius: 10px; /* Opcional: para que tenga bordes redondeados */
@@ -250,20 +252,6 @@
   letter-spacing: 1px;
 }
 
-body {
-  font-family: 'Libre Baskerville', serif;
-  font-size: 16px;
-  font-weight: 400;
-  background: #040404;
-  background: linear-gradient(90deg, rgba(4, 4, 4, 1) 0%,rgba(86, 86, 86, 255) 50%,rgba(132, 132, 132, 1) 100%)
-}
-
-.carousel-logo {
-  max-height: 80px;      /* Ajustá según lo que necesites */
-  object-fit: contain;   /* Mantiene proporciones sin recortar */
-  margin: auto;          /* Centra horizontalmente */
-  display: block;
-}
 
 /* Estilos para el carrusel */
 .carousel {
@@ -317,11 +305,6 @@ body {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.logo-img-card {
-  max-height: 100px;
-  width: auto;
-}
-
 /* Ajustes para móviles */
 @media (max-width: 768px) {
   .logo-overlay {
@@ -334,4 +317,41 @@ body {
   .hero-section, .carousel-item img {
     height: 400px !important;
   }
+}
+
+.footer {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #0f1214; /* oscuro elegante */
+}
+
+.footer a:hover {
+  color: #c0a060 !important; /* toque dorado sutil */
+}
+
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  background-color: #25d366;
+  color: white;
+  font-size: 2rem;
+  padding: 12px 14px;
+  border-radius: 50%;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-button:hover {
+  transform: scale(1.1);
+  color: white;
+  text-decoration: none;
+}
+
+.fullscreen-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* o 'space-between' si querés dividir contenido */
 }
