@@ -376,3 +376,24 @@ body {
   flex-direction: column;
   justify-content: center; /* o 'space-between' si querés dividir contenido */
 }
+
+.feature-item { 
+  display: flex;
+  align-items: center;
+  gap: 10px; /* espacio entre emoji y texto */
+  margin-bottom: 15px; /* espacio entre oraciones */
+}
+
+.feature-item .emoji {
+  font-size: 38px; /* tamaño emoji independiente */
+  flex-shrink: 0; /* evita que el emoji se encoja y el texto suba */
+}
+
+.feature-item p {
+  margin: 0; /* elimina márgenes por defecto */
+}
+
+.lista-iconos {
+  margin: 0;
+  padding: 0;
+}
