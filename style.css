@@ -99,6 +99,10 @@ body {
   text-align: center;
 }
 
+.texto-info {
+  color: rgb(255, 255, 255);
+}
+
 /* Efecto hover para imágenes ******************************/
 .img-fluid {
   transition: transform 0.3s;
@@ -273,6 +277,37 @@ body {
   letter-spacing: 1px;
 }
 
+.fullscreen-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* o 'space-between' si querés dividir contenido */
+}
+
+.feature-item { 
+  display: flex;
+  align-items: center;
+  gap: 5px; /* espacio entre emoji y texto */
+  margin-bottom: 15px; /* espacio entre oraciones */
+}
+
+.feature-item .emoji {
+  font-size: 35px; /* tamaño emoji independiente */
+  flex-shrink: 0; /* evita que el emoji se encoja y el texto suba */
+}
+
+.feature-item p {
+  margin: 0; /* elimina márgenes por defecto */
+}
+
+.titulo-item {
+  font-size: 25px;
+}
+
+.lista-iconos {
+  margin: 0;
+  padding: 0;
+}
 
 /* Estilos para el carrusel */
 .carousel {
@@ -298,14 +333,6 @@ body {
   }
 }
 
-.tarjeta-mayo {
-  height: 50%; /* o cualquier altura que necesites */
-  object-fit: cover;
-  object-position: center;
-  width: 100%; /* ocupa todo el ancho del div */
-  max-width: 700px; /* opcional: para que no sea demasiado ancha */
-}
-
 /* Estilos para la sección Hero */
 .hero-section {
   height: 500px;
@@ -324,6 +351,10 @@ body {
   max-width: 400px;
   text-align: center;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.accordion-body {
+  background-color: #eee;
 }
 
 /* Ajustes para móviles */
@@ -370,30 +401,3 @@ body {
   text-decoration: none;
 }
 
-.fullscreen-section {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* o 'space-between' si querés dividir contenido */
-}
-
-.feature-item { 
-  display: flex;
-  align-items: center;
-  gap: 10px; /* espacio entre emoji y texto */
-  margin-bottom: 15px; /* espacio entre oraciones */
-}
-
-.feature-item .emoji {
-  font-size: 38px; /* tamaño emoji independiente */
-  flex-shrink: 0; /* evita que el emoji se encoja y el texto suba */
-}
-
-.feature-item p {
-  margin: 0; /* elimina márgenes por defecto */
-}
-
-.lista-iconos {
-  margin: 0;
-  padding: 0;
-}
