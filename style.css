@@ -3,7 +3,7 @@ body {
   font-size: 16px;
   font-weight: 400;
   background: #040404;
-  background: linear-gradient(90deg, rgba(4, 4, 4, 1) 0%,rgba(86, 86, 86, 255) 50%,rgba(132, 132, 132, 1) 100%)
+  background: linear-gradient(90deg, rgb(38, 38, 38) 0%,rgba(86, 86, 86, 255) 50%,rgba(132, 132, 132, 1) 100%)
 }
 
 /* Tamaño general del navbar */
@@ -39,6 +39,12 @@ body {
     font-size: 0.9rem;
     padding: 0.3rem 0.5rem;
   }
+}
+
+/* Estilos para la sección Hero */
+.hero-section {
+  height: 500px;
+  overflow: hidden;
 }
 
 /* Carrusel de logos infinito ***************************************************/
@@ -101,6 +107,7 @@ body {
 
 .texto-info {
   color: rgb(255, 255, 255);
+  font-family: "Montserrat", sans-serif;
 }
 
 /* Efecto hover para imágenes ******************************/
@@ -133,8 +140,8 @@ body {
 
 /* for all social containers*/
 .socialContainer {
-  width: 52px;
-  height: 52px;
+  width: 62px;
+  height: 62px;
   border-radius: 5px;
   background-color: rgba(44, 44, 44, 0.746);
   display: flex;
@@ -231,7 +238,6 @@ body {
   }
 }
 
-
 .map-container {
   width: 100%;
   max-width: 400px; /* Ajustá este valor según el ancho deseado */
@@ -247,6 +253,9 @@ body {
   display: block;
 }
 
+.card-misiones {
+  max-width: 90%; /* o el valor que quieras */
+}
 
 /*card mejorado*/
 .card_ui {
@@ -258,6 +267,10 @@ body {
   background: #565656;
   background: linear-gradient(90deg, rgba(86, 86, 86, 1) 0%,rgba(198, 198, 198, 1) 100%);
   margin-top: 2rem;
+}
+
+.card_ui.container {
+  max-width: 90%; /* o el valor que quieras */
 }
 
 .title_ui {
@@ -273,8 +286,10 @@ body {
   font-weight: 800;
   text-transform: uppercase;
   color: white;
-  font-size: 25px;
-  letter-spacing: 1px;
+  font-size: 40px;
+  letter-spacing: 8px;
+  text-align: center;
+  padding-bottom: 90px;
 }
 
 .fullscreen-section {
@@ -307,6 +322,15 @@ body {
 .lista-iconos {
   margin: 0;
   padding: 0;
+  gap: 0px;  
+}
+
+.accordion-body {
+  background-color: rgb(255, 255, 255);
+}
+
+.accordion-body strong {
+  color: rgb(0, 0, 0);
 }
 
 /* Estilos para el carrusel */
@@ -333,12 +357,6 @@ body {
   }
 }
 
-/* Estilos para la sección Hero */
-.hero-section {
-  height: 500px;
-  overflow: hidden;
-}
-
 /* Logo superpuesto */
 .logo-overlay {
   position: absolute;
@@ -351,10 +369,6 @@ body {
   max-width: 400px;
   text-align: center;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.accordion-body {
-  background-color: #eee;
 }
 
 /* Ajustes para móviles */
