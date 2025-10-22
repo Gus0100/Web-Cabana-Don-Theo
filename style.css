@@ -253,10 +253,6 @@ body {
   display: block;
 }
 
-.card-misiones {
-  max-width: 90%; /* o el valor que quieras */
-}
-
 /*card mejorado*/
 .card_ui {
   text-align: center;
@@ -265,12 +261,8 @@ body {
   box-shadow: 0 10px 15px -3px rgb(27, 103, 161),0 4px 6px -4px rgba(33,150,243,.4);
   border-radius: 10px;
   background: #565656;
-  background: linear-gradient(90deg, rgba(86, 86, 86, 1) 0%,rgba(198, 198, 198, 1) 100%);
+  background: linear-gradient(90deg, rgb(86, 86, 86) 0%,rgba(198, 198, 198, 1) 100%);
   margin-top: 2rem;
-}
-
-.card_ui.container {
-  max-width: 90%; /* o el valor que quieras */
 }
 
 .title_ui {
@@ -278,7 +270,7 @@ body {
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.64);
   margin-top: 10px;
-  font-size: 25px;
+  font-size: 35px;
   letter-spacing: 1px;
 }
 
@@ -323,14 +315,6 @@ body {
   margin: 0;
   padding: 0;
   gap: 0px;  
-}
-
-.accordion-body {
-  background-color: rgb(255, 255, 255);
-}
-
-.accordion-body strong {
-  color: rgb(0, 0, 0);
 }
 
 /* Estilos para el carrusel */
@@ -384,6 +368,11 @@ body {
     height: 400px !important;
   }
 }
+
+.accordion {
+  padding: 50px;
+}
+
 
 .footer {
   font-family: 'Open Sans', sans-serif;
