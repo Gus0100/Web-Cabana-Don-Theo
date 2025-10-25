@@ -253,92 +253,156 @@ body {
   display: block;
 }
 
-/*card mejorado*/
-.card_ui {
-  text-align: center;
-  position: relative;
-  cursor: pointer;
-  box-shadow: 0 10px 15px -3px rgb(27, 103, 161),0 4px 6px -4px rgba(33,150,243,.4);
-  border-radius: 10px;
-  background: #565656;
-  background: linear-gradient(90deg, rgb(86, 86, 86) 0%,rgba(198, 198, 198, 1) 100%);
-  margin-top: 2rem;
-}
-
+/* Títulos responsivos */
 .title_ui {
-  font-weight: 800;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.64);
-  margin-top: 10px;
-  font-size: 35px;
-  letter-spacing: 1px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 10px;
+    word-wrap: break-word;
 }
-
-.title_ui_invert {
-  font-weight: 800;
-  text-transform: uppercase;
-  color: white;
-  font-size: 40px;
-  letter-spacing: 8px;
-  text-align: center;
-  padding-bottom: 90px;
+h1 {
+    font-size: 1.5rem;
+    color: #f8f9fa;
+    margin-bottom: 20px;
+    word-wrap: break-word;
 }
-
-.fullscreen-section {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* o 'space-between' si querés dividir contenido */
-}
-
-.feature-item { 
-  display: flex;
-  align-items: center;
-  gap: 5px; /* espacio entre emoji y texto */
-  margin-bottom: 15px; /* espacio entre oraciones */
-}
-
-.feature-item .emoji {
-  font-size: 35px; /* tamaño emoji independiente */
-  flex-shrink: 0; /* evita que el emoji se encoja y el texto suba */
-}
-
-.feature-item p {
-  margin: 0; /* elimina márgenes por defecto */
-}
-
 .titulo-item {
-  font-size: 25px;
+    font-size: 1.4rem;
+    color: #fff;
+    margin-bottom: 20px;
+    word-wrap: break-word;
 }
-
+/* Lista de características */
 .lista-iconos {
-  margin: 0;
-  padding: 0;
-  gap: 0px;  
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
-
-/* Estilos para el carrusel */
-.carousel {
-  height: 100%;
-  overflow: hidden; /* Esto evita que se vea el contenido que se sale */
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 12px;
+    transition: all 0.3s ease;
 }
-
-.carousel-inner, .carousel-item {
-  height: 100%;
+.feature-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
 }
-
-/* Asegura que las imágenes del carrusel mantengan su relación de aspecto */
+.emoji {
+    font-size: 1.5rem;
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+.feature-item p {
+    margin: 0;
+    color: #fff;
+    line-height: 1.4;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+/* Carrusel */
 .carousel-item img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
 }
-
-/* En móviles, el carrusel tendrá una altura fija */
-@media (max-width: 767.98px) {
-  .carousel {
-    height: 300px; /* Ajusta esta altura según necesites */
-  }
+/* Media Queries para responsividad */
+@media (max-width: 1200px) {
+    .card_ui {
+        margin: 20px 15px;
+    }
+}
+@media (max-width: 992px) {
+    .title_ui {
+        font-size: 1.6rem;
+    }
+    
+    h1 {
+        font-size: 1.3rem;
+    }
+    
+    .titulo-item {
+        font-size: 1.2rem;
+    }
+    
+    .feature-item {
+        padding: 10px;
+    }
+}
+@media (max-width: 768px) {
+    .card_ui {
+        margin-top: 30px;
+        padding: 15px;
+    }
+    
+    .title_ui {
+        font-size: 1.4rem;
+    }
+    
+    h1 {
+        font-size: 1.2rem;
+    }
+    
+    .titulo-item {
+        font-size: 1.1rem;
+    }
+    
+    .feature-item {
+        flex-direction: column;
+        text-align: center;
+        padding: 8px;
+    }
+    
+    .emoji {
+        margin-right: 0;
+        margin-bottom: 8px;
+    }
+    
+    .feature-item p {
+        font-size: 0.95rem;
+    }
+}
+@media (max-width: 576px) {
+    .card_ui {
+        margin-top: 20px;
+        padding: 10px;
+    }
+    
+    .title_ui {
+        font-size: 1.2rem;
+    }
+    
+    h1 {
+        font-size: 1rem;
+    }
+    
+    .titulo-item {
+        font-size: 1rem;
+    }
+    
+    .feature-item {
+        padding: 6px;
+        margin-bottom: 10px;
+    }
+    
+    .emoji {
+        font-size: 1.2rem;
+    }
+    
+    .feature-item p {
+        font-size: 0.9rem;
+    }
+}
+/* Ajustes específicos para texto muy largo */
+.texto-ajustado {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
 }
 
 /* Logo superpuesto */
