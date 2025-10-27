@@ -281,7 +281,7 @@ h1 {
 }
 .feature-item {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     margin-bottom: 15px;
     text-align: left;
     background: rgba(255, 255, 255, 0.1);
@@ -437,6 +437,10 @@ h1 {
   padding: 50px;
 }
 
+.acordion-color{
+  background-color: rgb(81, 122, 255);
+  color: white;
+}
 
 .footer {
   font-family: 'Open Sans', sans-serif;
