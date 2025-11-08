@@ -3,7 +3,7 @@ body {
   font-size: 16px;
   font-weight: 400;
   background: #040404;
-  background: linear-gradient(90deg, rgb(38, 38, 38) 0%,rgba(86, 86, 86, 255) 50%,rgba(132, 132, 132, 1) 100%)
+  background: linear-gradient(90deg, rgb(38, 38, 38) 0%, rgba(86, 86, 86, 255) 50%, rgba(132, 132, 132, 1) 100%)
 }
 
 /* Tamaño general del navbar */
@@ -47,7 +47,7 @@ body {
   overflow: hidden;
 }
 
-/* Carrusel de logos infinito ***************************************************/
+/* Carrusel de logos infinito - VERSIÓN MEJORADA */
 .logo-slider {
   width: 100%;
   overflow: hidden;
@@ -56,17 +56,143 @@ body {
   position: relative;
 }
 
+/* Efecto de desvanecimiento en los bordes */
+.logo-slider::before,
+.logo-slider::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.logo-slider::before {
+  left: 0;
+  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+}
+
+.logo-slider::after {
+  right: 0;
+  background: linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+}
+
 .logo-track {
   display: flex;
   gap: 50px;
   animation: scroll 20s linear infinite;
-  width: max-content; /* Asegura que el contenedor no tenga límite de ancho */
+  width: max-content;
 }
 
 .logo-track img {
   height: 60px;
   object-fit: contain;
   filter: brightness(1);
+  transition: all 0.3s ease;
+  opacity: 0.7; /* Logos ligeramente transparentes */
+}
+
+.logo-track img:hover {
+  opacity: 1;
+  filter: brightness(1.1);
+  transform: scale(1.05);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 25px));
+  }
+}
+
+/* RESPONSIVE MEJORADO */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .logo-track {
+    gap: 40px;
+  }
+  
+  .logo-track img {
+    height: 70px;
+    opacity: 0.8; /* Más visibles en móvil */
+  }
+  
+  .logo-slider {
+    padding: 25px 0;
+  }
+  
+  .logo-slider::before,
+  .logo-slider::after {
+    width: 60px; /* Gradientes más pequeños */
+  }
+}
+
+/* Móviles grandes */
+@media (max-width: 576px) {
+  .logo-track {
+    gap: 30px;
+  }
+  
+  .logo-track img {
+    height: 80px;
+    opacity: 0.9;
+  }
+  
+  .logo-slider {
+    padding: 30px 0;
+  }
+  
+  .logo-track {
+    animation: scroll 25s linear infinite;
+  }
+  
+  .logo-slider::before,
+  .logo-slider::after {
+    width: 40px;
+  }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+  .logo-track {
+    gap: 25px;
+  }
+  
+  .logo-track img {
+    height: 85px;
+    opacity: 1; /* Completamente visibles */
+  }
+  
+  .logo-slider {
+    padding: 35px 0;
+  }
+}
+
+/* Móviles muy pequeños */
+@media (max-width: 360px) {
+  .logo-track {
+    gap: 20px;
+  }
+  
+  .logo-track img {
+    height: 75px;
+  }
+  
+  .logo-slider::before,
+  .logo-slider::after {
+    width: 30px;
+  }
+}
+
+/* Pausar animación al hacer hover (solo en desktop) */
+@media (min-width: 769px) {
+  .logo-track:hover {
+    animation-play-state: paused;
+  }
 }
 
 /* Animación */
@@ -74,19 +200,10 @@ body {
   0% {
     transform: translateX(0);
   }
-  100% {
-    transform: translateX(-50%); /* Mueve solo el 50% para evitar saltos */
-  }
-}
 
-/* Ajustes para móvil */
-@media (max-width: 768px) {
-  .logo-track {
-    gap: 30px;
-    animation-duration: 15s; /* Más rápido en móvil */
-  }
-  .logo-track img {
-    height: 40px;
+  100% {
+    transform: translateX(-50%);
+    /* Mueve solo el 50% para evitar saltos */
   }
 }
 
@@ -94,12 +211,13 @@ body {
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-50%);
   }
 }
 
-.container > section {
+.container>section {
   margin: 0 auto;
   padding: 10em 3em;
   text-align: center;
@@ -114,6 +232,7 @@ body {
 .img-fluid {
   transition: transform 0.3s;
 }
+
 .img-fluid:hover {
   transform: scale(1.03);
 }
@@ -123,11 +242,12 @@ body {
   border-bottom: 1px solid #eee;
   padding-bottom: 2rem;
 }
+
 .row:last-child {
   border-bottom: none;
 }
 
-/* card-ui *************************************************/ 
+/* card-ui *************************************************/
 .card-redes {
   width: fit-content;
   height: fit-content;
@@ -150,21 +270,25 @@ body {
   overflow: hidden;
   transition-duration: 0.3s;
 }
+
 /* instagram*/
 .containerOne:hover {
   background-color: #d62976;
   transition-duration: 0.3s;
 }
+
 /* Tiktok*/
 .containerTwo:hover {
   background-color: #25f4ee;
   transition-duration: 0.3s;
 }
+
 /* Facebook*/
 .containerThree:hover {
   background-color: #1877f2;
   transition-duration: 0.3s;
 }
+
 /* Whatsapp*/
 .containerFour:hover {
   background-color: green;
@@ -179,9 +303,12 @@ body {
 .socialSvg {
   width: 19px;
 }
+
 .largeIcon {
-  width: 27px; /* Ancho específico solo para el icono de TikTok */
+  width: 27px;
+  /* Ancho específico solo para el icono de TikTok */
 }
+
 .socialSvg path {
   fill: rgb(255, 255, 255);
 }
@@ -226,24 +353,30 @@ body {
 
 .logo-video {
   max-width: 700px;
-  width: 85%; /* 100% del contenedor padre */
+  width: 85%;
+  /* 100% del contenedor padre */
   height: auto;
 }
 
 /* Celulares - permití que crezca más y ocupando más ancho */
 @media (max-width: 575px) {
   .logo-video {
-    max-width: 90vw; /* Ocupa el 90% del ancho de la pantalla */
+    max-width: 90vw;
+    /* Ocupa el 90% del ancho de la pantalla */
     width: 90vw;
   }
 }
 
 .map-container {
   width: 100%;
-  max-width: 400px; /* Ajustá este valor según el ancho deseado */
-  margin: 0 auto;   /* Centra el mapa si el ancho es menor que el contenedor */
-  overflow: hidden; /* Oculta el contenido que se desborde */
-  border-radius: 10px; /* Opcional: para que tenga bordes redondeados */
+  max-width: 400px;
+  /* Ajustá este valor según el ancho deseado */
+  margin: 0 auto;
+  /* Centra el mapa si el ancho es menor que el contenedor */
+  overflow: hidden;
+  /* Oculta el contenido que se desborde */
+  border-radius: 10px;
+  /* Opcional: para que tenga bordes redondeados */
 }
 
 .map-container iframe {
@@ -255,176 +388,192 @@ body {
 
 /* Títulos responsivos */
 .title_ui {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #fff;
-    margin-bottom: 10px;
-    word-wrap: break-word;
-    text-align: center;
-}
-h1 {
-    font-size: 3.5rem;
-    color: #f8f9fa;
-    margin-bottom: 20px;
-    word-wrap: break-word;
-}
-.titulo-item {
-    font-size: 1.4rem;
-    color: #fff;
-    margin-bottom: 20px;
-    word-wrap: break-word;
-}
-/* Lista de características */
-.lista-iconos {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-.feature-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-    text-align: left;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    padding: 12px;
-    transition: all 0.3s ease;
-}
-.feature-item:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: translateY(-2px);
-}
-.emoji {
-    font-size: 1.5rem;
-    margin-right: 12px;
-    flex-shrink: 0;
-}
-.feature-item p {
-    margin: 0;
-    color: #fff;
-    line-height: 1.4;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    hyphens: auto;
-}
-/* Carrusel */
-.carousel-item img {
-    object-fit: cover;
-    border-radius: 8px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 10px;
+  word-wrap: break-word;
+  text-align: center;
 }
 
-.text-center{
-    font-size: 2.5rem;
+h1 {
+  font-size: 3.5rem;
+  color: #f8f9fa;
+  margin-bottom: 20px;
+  word-wrap: break-word;
 }
-  
-.titulo-preguntas{
+
+.titulo-item {
+  font-size: 1.4rem;
+  color: #fff;
+  margin-bottom: 20px;
+  word-wrap: break-word;
+}
+
+/* Lista de características */
+.lista-iconos {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 12px;
+  transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.emoji {
+  font-size: 1.5rem;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.feature-item p {
+  margin: 0;
+  color: #fff;
+  line-height: 1.4;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Carrusel */
+.carousel-item img {
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.text-center {
+  font-size: 2.5rem;
+}
+
+.titulo-preguntas {
   color: #fff;
 }
 
 /* Media Queries para responsividad */
 @media (max-width: 1200px) {
-    .card_ui {
-        margin: 10px 10px;
-    }
+  .card_ui {
+    margin: 10px 10px;
+  }
 }
+
 @media (max-width: 992px) {
-    
-    .title_ui {
-        font-size: 1.8rem;
-    }
 
-    .text-center{
-        font-size: 3rem;
-    }
-    
-    h1 {
-        font-size: 2rem;
-    }
-    
-    .titulo-item {
-        font-size: 1.2rem;
-    }
-    
-    .feature-item {
-        padding: 10px;
-    }
+  .title_ui {
+    font-size: 1.8rem;
+  }
+
+  .text-center {
+    font-size: 3rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .titulo-item {
+    font-size: 1.2rem;
+  }
+
+  .feature-item {
+    padding: 10px;
+  }
 }
+
 @media (max-width: 768px) {
-    .card_ui {
-        margin: 10px 10px;
-    }
+  .card_ui {
+    margin: 10px 10px;
+  }
 
-    .text-center{
-        font-size: 3rem;
-    }
-    
-    .title_ui {
-        font-size: 1.8rem;
-    }
-    
-    h1 {
-        font-size: 2rem;
-    }
-    
-    .titulo-item {
-        font-size: 1.1rem;
-    }
-    
-    .feature-item {
-        flex-direction: column;
-        text-align: center;
-        padding: 8px;
-    }
-    
-    .emoji {
-        margin-right: 0;
-        margin-bottom: 8px;
-    }
-    
-    .feature-item p {
-        font-size: 0.95rem;
-    }
+  .text-center {
+    font-size: 3rem;
+  }
+
+  .title_ui {
+    font-size: 1.8rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .titulo-item {
+    font-size: 1.1rem;
+  }
+
+  .feature-item {
+    flex-direction: column;
+    text-align: center;
+    padding: 8px;
+  }
+
+  .emoji {
+    margin-right: 0;
+    margin-bottom: 8px;
+  }
+
+  .feature-item p {
+    font-size: 0.95rem;
+  }
 }
+
 @media (max-width: 576px) {
-    .card_ui {
-        margin-top: 20px;
-        padding: 10px;
-    }
-    
-    .text-center{
-        font-size: 2.5rem;
-    }
+  .card_ui {
+    margin-top: 20px;
+    padding: 10px;
+  }
 
-    .title_ui {
-        font-size: 1.8rem;
-    }
-    
-    h1 {
-        font-size: 2rem;
-    }
-    
-    .titulo-item {
-        font-size: 1rem;
-    }
-    
-    .feature-item {
-        padding: 6px;
-        margin-bottom: 10px;
-    }
-    
-    .emoji {
-        font-size: 1.2rem;
-    }
-    
-    .feature-item p {
-        font-size: 0.9rem;
-    }
+  .text-center {
+    font-size: 2.5rem;
+  }
+
+  .title_ui {
+    font-size: 1.8rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .titulo-item {
+    font-size: 1rem;
+  }
+
+  .feature-item {
+    padding: 6px;
+    margin-bottom: 10px;
+  }
+
+  .emoji {
+    font-size: 1.2rem;
+  }
+
+  .feature-item p {
+    font-size: 0.9rem;
+  }
+
+  .logos {
+    font-size: 180px;
+  }
 }
+
 /* Ajustes específicos para texto muy largo */
 .texto-ajustado {
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    hyphens: auto;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
 /* Logo superpuesto */
@@ -449,8 +598,9 @@ h1 {
     width: 80%;
     padding: 1rem;
   }
-  
-  .hero-section, .carousel-item img {
+
+  .hero-section,
+  .carousel-item img {
     height: 400px !important;
   }
 }
@@ -459,18 +609,20 @@ h1 {
   padding: 50px;
 }
 
-.acordion-color{
+.acordion-color {
   background-color: rgb(81, 122, 255);
   color: white;
 }
 
 .footer {
   font-family: 'Open Sans', sans-serif;
-  background-color: #0f1214; /* oscuro elegante */
+  background-color: #0f1214;
+  /* oscuro elegante */
 }
 
 .footer a:hover {
-  color: #c0a060 !important; /* toque dorado sutil */
+  color: #c0a060 !important;
+  /* toque dorado sutil */
 }
 
 .whatsapp-button {
@@ -484,7 +636,7 @@ h1 {
   padding: 12px 14px;
   border-radius: 50%;
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
 }
 
@@ -493,4 +645,3 @@ h1 {
   color: white;
   text-decoration: none;
 }
-
